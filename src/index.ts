@@ -47,7 +47,7 @@ server.tool(
         messages: [{ role: "user", content: prompt }]
       })
     });
-    const data = await response.json();
+    const data: any = await response.json();
     const text = data.choices?.[0]?.message?.content ?? "No response";
     return { content: [{ type: "text", text }] };
   }
